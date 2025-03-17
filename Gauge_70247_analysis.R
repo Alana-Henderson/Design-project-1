@@ -1,9 +1,9 @@
 rm(list=ls())  # clear global working environment
 
-setwd("C:/Users/larni/OneDrive - Australian National University/Sem 1 2025-Tampopo/ENGN4901 Water Systems/R working directory/Design-project-1")
+#setwd("C:/Users/larni/OneDrive - Australian National University/Sem 1 2025-Tampopo/ENGN4901 Water Systems/R working directory/Design-project-1")
 
-# load BoM daily data for guage10017 into data frame [other: parliament_gauge, gardens_gauge]
-cap_flat_gauge <- read.csv("70016_Pdaily_1971_2023.csv")
+# load BoM daily data for guage70247 into data frame 
+garden_gauge <- read.csv("70247_Pdaily_1971_2023.csv") 
 
 
 # load relevant packages
@@ -11,11 +11,11 @@ library(zoo)
 library(ggplot2)
 
 # create character list of the dates in format: YYYY-MM-DD 
-date_character = paste(cap_flat_gauge$Year, cap_flat_gauge$Month,cap_flat_gauge$Day, sep="-")
+date_character = paste(garden_gauge$Year, garden_gauge$Month,garden_gauge$Day, sep="-")
 # convert the characters to class: Date
 date = as.Date(date_character)
 # zoo helps capture the irregular timeseries data into matrix 
-rainfall = zoo(cap_flat_gauge$Rainfall.amount..millimetres.,)
+rainfall = zoo(garden_gauge$Rainfall.amount..millimetres.,)
 
 #The maximum, sum and average total rainfall at the gauge station from 1971-2023
 max(rainfall, na.rm=TRUE)
@@ -23,7 +23,7 @@ sum(rainfall, na.rm=TRUE)
 mean(rainfall, na.rm=TRUE)
 
 # makes another data frame with just the rows of rainfall measurement >=2days
-tagged_accumulations <- subset(cap_flat_gauge, Period.over.which.rainfall.was.measured..days. >= 2)
+tagged_accumulations <- subset(garden_gauge, Period.over.which.rainfall.was.measured..days. >= 2)
 nrow(tagged_accumulations)
 
 #Total monthly rainfall
