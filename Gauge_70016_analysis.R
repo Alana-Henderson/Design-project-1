@@ -1,6 +1,6 @@
 rm(list=ls())  # clear global working environment
 
-setwd("C:/Users/larni/OneDrive - Australian National University/Sem 1 2025-Tampopo/ENGN4901 Water Systems/R working directory/Design-project-1")
+#setwd("C:/Users/larni/OneDrive - Australian National University/Sem 1 2025-Tampopo/ENGN4901 Water Systems/R working directory/Design-project-1")
 
 # load BoM daily data for guage10017 into data frame [other: parliament_gauge, gardens_gauge]
 cap_flat_gauge <- read.csv("70016_Pdaily_1971_2023.csv")
@@ -8,7 +8,7 @@ cap_flat_gauge <- read.csv("70016_Pdaily_1971_2023.csv")
 
 # load relevant packages
 library(zoo)
-library(ggplot2)
+#library(ggplot2)
 
 # create character list of the dates in format: YYYY-MM-DD 
 date_character = paste(cap_flat_gauge$Year, cap_flat_gauge$Month,cap_flat_gauge$Day, sep="-")
@@ -53,7 +53,7 @@ plot(anomalies)
 
 #task 5 generating plots for annual total and anomalies
 plot(annual_sum)
-plot(annual_sum, xlab=c("Year"), ylab=c("Annual Sum (mm)"), main = c("Historical Rainfall Conditions Cap Flat Gauge"))
+plot(annual_sum, xlab=c("Year"), ylab=c("Annual Sum (mm)"), main = c("Historical Rainfall Conditions Captains Flat Gauge"))
 
 #task 6 scaling data by 0.8 
 scaled_rainfall = 0.8*rainfall

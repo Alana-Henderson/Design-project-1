@@ -8,7 +8,7 @@ garden_gauge <- read.csv("70247_Pdaily_1971_2023.csv")
 
 # load relevant packages
 library(zoo)
-library(ggplot2)
+#library(ggplot2)
 
 # create character list of the dates in format: YYYY-MM-DD 
 date_character = paste(garden_gauge$Year, garden_gauge$Month,garden_gauge$Day, sep="-")
