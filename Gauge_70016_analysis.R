@@ -53,7 +53,7 @@ plot(anomalies)
 
 #task 5 generating plots for annual total and anomalies
 plot(annual_sum)
-plot(annual_sum, xlab=c("Year"), ylab=c("Annual Sum"))
+plot(annual_sum, xlab=c("Year"), ylab=c("Annual Sum (mm)"), main = c("Historical Rainfall Conditions Cap Flat Gauge"))
 
 #task 6 scaling data by 0.8 
 scaled_rainfall = 0.8*rainfall
